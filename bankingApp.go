@@ -2,11 +2,15 @@ package main
 
 import (
 	"fmt"
-	"com.softwarethree/IndividualProject/utilities"
 )
 
+// driver code
 func main() {
-	encryptor := encryption.Encrypt{}
-	cipher := encryptor.EncryptData("Hi")
-	fmt.Println(cipher)
+	// encryptor := utilities.Encrypt{}
+	// cipher := encryptor.EncryptData("Hi")
+	// fmt.Println(cipher)
+
+	as := InitSummary()
+
+	fmt.Println(as.GetSummary())
 }
