@@ -1,0 +1,25 @@
+package encryption
+
+import (
+	"crypto/aes"
+	"crypto/cipher"
+	"encoding/hex"
+)
+
+// Encrypt service
+type Encrypt struct {
+	data string
+	key  []byte
+}
+
+// EncryptData Method
+func (e Encrypt) EncryptData(data string) cipher.Block {
+	e.key, _ = hex.DecodeString("6378616e676120746869732070617373776f726420746c206120736569726575")
+	blockAes, err := aes.NewCipher(e.key)
+
+	if err != nil {
+		panic(err)
+	}
+
+	return blockAes
+}
