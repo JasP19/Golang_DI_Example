@@ -7,6 +7,7 @@ package main
 
 import (
 	"com.softwarethree/IndividualProject/utilities"
+	"github.com/google/wire"
 )
 
 // Injectors from wire.go:
@@ -16,3 +17,12 @@ func InitSummary() utilities.AccountSummary {
 	accountSummary := utilities.ProvideAccountSummary(account)
 	return accountSummary
 }
+
+func InitEncryption() utilities.Encrypt {
+	encrypt := utilities.ProvideEncryptor()
+	return encrypt
+}
+
+// wire.go:
+
+var EncryptSet = wire.NewSet(utilities.ProvideEncrypt, wire.Bind((*utilities.Encryption)(nil), (*utilities.Encrypt)(nil)), utilities.ProvideEncryptor)

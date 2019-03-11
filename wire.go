@@ -15,7 +15,14 @@ func InitSummary() utilities.AccountSummary {
 	return utilities.AccountSummary{}
 }
 
-// do binding and stuff
-// func InitEncryption() {
-// 	wire.Build()
-// }
+var EncryptSet = wire.NewSet(
+	utilities.ProvideEncrypt,
+	wire.Bind((*utilities.Encryption)(nil), (*utilities.Encrypt)(nil)),
+	utilities.ProvideEncryptor)
+
+// InitEncryption injector
+func InitEncryption() utilities.Encrypt {
+	wire.Build(EncryptSet)
+
+	return utilities.Encrypt{}
+}

@@ -8,7 +8,12 @@ type AccountSummary struct {
 	message string
 }
 
+// ProvideAccountSummary method
+func ProvideAccountSummary(a Account) AccountSummary {
+	return AccountSummary{account: a, message: "Welcome"}
+}
+
 // GetSummary output
 func (as AccountSummary) GetSummary() string {
-	return (as.message + " " + as.account.name + ". Your balance is " + strconv.FormatFloat(as.account.balance, 'f', -1, 64))
+	return (as.message + " " + as.account.name + ". Your balance is R" + strconv.FormatFloat(as.account.balance, 'f', -1, 64))
 }

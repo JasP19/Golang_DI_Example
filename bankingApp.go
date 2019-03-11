@@ -11,6 +11,8 @@ func main() {
 	// fmt.Println(cipher)
 
 	as := InitSummary()
+	en := InitEncryption()
 
 	fmt.Println(as.GetSummary())
+	fmt.Println(en.EncryptData("Hello"))
 }
