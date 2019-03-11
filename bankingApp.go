@@ -10,6 +10,8 @@ func main() {
 	// cipher := encryptor.EncryptData("Hi")
 	// fmt.Println(cipher)
 
+	testAccount := InitTestAccount()
+
 	as := InitSummary("Hello")
 	en := InitEncryption()
 

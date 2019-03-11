@@ -25,4 +25,10 @@ func InitEncryption() utilities.Encrypt {
 
 // wire.go:
 
+// InitTestAccount injector
+func InitTestAccount() utilities.Account {
+	testAccount := utilities.ProvideTestAccount()
+	return testAccount
+}
+
 var EncryptSet = wire.NewSet(utilities.ProvideEncrypt, wire.Bind((*utilities.Encryption)(nil), (*utilities.Encrypt)(nil)), utilities.ProvideEncryptor)

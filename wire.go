@@ -8,6 +8,12 @@ import (
 	"com.softwarethree/IndividualProject/utilities"
 )
 
+// InitTestAccount injector
+func InitTestAccount() utilities.Account {
+	testAccount := utilities.ProvideTestAccount()
+	return testAccount
+}
+
 // InitSummary injector
 func InitSummary(messagePhrase string) utilities.AccountSummary {
 	wire.Build(utilities.ProvideAccountSummary, utilities.ProvideAccount)
