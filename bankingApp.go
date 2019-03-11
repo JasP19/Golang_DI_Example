@@ -10,7 +10,7 @@ func main() {
 	// cipher := encryptor.EncryptData("Hi")
 	// fmt.Println(cipher)
 
-	as := InitSummary()
+	as := InitSummary("Hello")
 	en := InitEncryption()
 
 	fmt.Println(as.GetSummary())

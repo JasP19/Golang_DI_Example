@@ -9,7 +9,7 @@ import (
 )
 
 // InitSummary injector
-func InitSummary() utilities.AccountSummary {
+func InitSummary(messagePhrase string) utilities.AccountSummary {
 	wire.Build(utilities.ProvideAccountSummary, utilities.ProvideAccount)
 
 	return utilities.AccountSummary{}

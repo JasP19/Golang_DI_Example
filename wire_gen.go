@@ -12,9 +12,9 @@ import (
 
 // Injectors from wire.go:
 
-func InitSummary() utilities.AccountSummary {
+func InitSummary(messagePhrase string) utilities.AccountSummary {
 	account := utilities.ProvideAccount()
-	accountSummary := utilities.ProvideAccountSummary(account)
+	accountSummary := utilities.ProvideAccountSummary(account, messagePhrase)
 	return accountSummary
 }
 

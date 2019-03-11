@@ -9,8 +9,8 @@ type AccountSummary struct {
 }
 
 // ProvideAccountSummary method
-func ProvideAccountSummary(a Account) AccountSummary {
-	return AccountSummary{account: a, message: "Welcome"}
+func ProvideAccountSummary(a Account, messagePhrase string) AccountSummary {
+	return AccountSummary{account: a, message: messagePhrase}
 }
 
 // GetSummary output
