@@ -6,15 +6,23 @@ import (
 
 // driver code
 func main() {
-	// encryptor := utilities.Encrypt{}
-	// cipher := encryptor.EncryptData("Hi")
-	// fmt.Println(cipher)
 
+	// standard dependency injection
 	testAccount := InitTestAccount()
+	fmt.Println(testAccount.PrintDetails())
 
-	as := InitSummary("Hello")
+	fmt.Println()
+
+	/* building dependency tree (account then summary), changing injector signature with message, and
+	struct provider in account attribute of account summary */
+	accountSummary := InitSummary("Hello")
+	fmt.Println(accountSummary.PrintSummary())
+
+	fmt.Println()
+
+	//transaction setup
+
+	// encryption
 	en := InitEncryption()
-
-	fmt.Println(as.GetSummary())
 	fmt.Println(en.EncryptData("Hello"))
 }

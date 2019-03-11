@@ -14,6 +14,6 @@ func ProvideAccountSummary(a Account, messagePhrase string) AccountSummary {
 }
 
 // GetSummary output
-func (as AccountSummary) GetSummary() string {
+func (as AccountSummary) PrintSummary() string {
 	return (as.message + " " + as.account.name + ". Your balance is R" + strconv.FormatFloat(as.account.balance, 'f', -1, 64))
 }
